@@ -1,15 +1,14 @@
 
 import './App.css'
-import Canvas from './Canvas'
 import Customize from './pages/Customize'
-import Home from './pages/Home'
-
+// import Home from './pages/Home'
+import CanvasFrame from './Canvas'
 function App() {
 
   return (
   <main className='app transition-all ease-in'>
-    <Home />
-    <Canvas />
+    {/* <Home /> */}
+    <CanvasFrame />
     <Customize />
   </main>
   )
