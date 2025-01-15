@@ -20,6 +20,7 @@ function CanvasFrame() {
       </Center>
     </CameraRig>
    </Canvas>
+   
   )
 }
 
