@@ -1,9 +1,6 @@
-import 'animate.css';
-
 import { Canvas } from '@react-three/fiber'
 import {Center, Environment} from '@react-three/drei'
 import CameraRig from './CameraRig';
-import Backdrop from './Backdrop';
 import Shirt from './Shirt';
 function CanvasFrame() {
   return (
@@ -20,7 +17,7 @@ function CanvasFrame() {
       </Center>
     </CameraRig>
    </Canvas>
-   
+
   )
 }
 
