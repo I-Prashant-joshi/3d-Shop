@@ -19,7 +19,8 @@ const [activeFilterTab,setActiveFilterTab]=useState({
 
  function  handletabclick(tabname){
  setActiveTab(tabname);
- }
+ } 
+
  function handletDecal(type,result){
   state.logoDecal=result;
   }
@@ -50,15 +51,17 @@ async function generateShirt (type){
  
  const generateTabContent=()=>{
   switch(activeTab){
-    case "colorpicker" : return <ColorPicker />
+    case "colorpicker" : return <ColorPicker handletabclick={handletabclick} />
     case "filepicker" : return <FilePicker 
     file={file}
     setFile={setFile}
     readFile={readFile}
+    handletabclick={handletabclick}
     />
     case "aipicker" : return <AIPicker 
     setPrompt= {setPrompt}
     generateShirt ={generateShirt}
+    handletabclick={handletabclick}
     />
     default : return null
   }

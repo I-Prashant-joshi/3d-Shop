@@ -1,8 +1,12 @@
 import React from 'react'
+import CloseIcon from '@mui/icons-material/Close';
 
-function AIPicker({setPrompt,generateShirt}) {
+function AIPicker({setPrompt,generateShirt,handletabclick}) {
   return (
+    <>
     <div style={{position:"absolute",left:80,bottom:340,height:"200px",width:"230px",backgroundColor:"#ece8e8"}}>
+    <div className='flex justify-end' onClick={()=>handletabclick("close")}><CloseIcon /></div>
+    
       <div style={{display:"flex",flexDirection:"column"}}>
         <div style={{width:"100%",fontSize:"14px",fontWeight:700,textAlign:"center",padding:"10px"}}>
         <label>Please write here ...</label>
@@ -20,6 +24,7 @@ function AIPicker({setPrompt,generateShirt}) {
       </div>
       </div>
    </div>
+   </>
   )
 }
 
