@@ -11,7 +11,8 @@ function CameraRig({children}) {
       easing.dampE(group.current.rotation, [state.pointer.y / 5, -state.pointer.x / 5, 0], 0.25, delta)
     })
   return (
-    <group ref={group}>
+    
+    <group ref={group} >
         {children}
     </group>
   )

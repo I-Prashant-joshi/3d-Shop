@@ -9,7 +9,7 @@ import state from "../store";
 function Customize() {
 const [activeTab,setActiveTab]=useState("")
 const [file,setFile]=useState("");
-const [promt,setPrompt]=useState("")
+const [prompt,setPrompt]=useState("")
 const [generatingImg,setgeneratingImg]=useState(true)
 const [activeEditorTab,setActiveEditorTab]=useState();
 const [activeFilterTab,setActiveFilterTab]=useState({
@@ -24,6 +24,25 @@ const [activeFilterTab,setActiveFilterTab]=useState({
   state.logoDecal=result;
   }
 
+async function generateShirt (type){
+  
+  try {
+    const response = await fetch("http://localhost:4000/AI/dalle",{
+      method:"POST",
+      headers:{
+        'content-type':"application/json"
+      },
+      body:JSON.stringify({
+        prompt
+      })
+    })
+    console.log("response",response);
+    
+  } catch (error) {
+    console.log("error",error);
+    
+  }
+}
  function readFile(type){
   reader(file).then((result)=>handletDecal(type,result)
   )
@@ -37,7 +56,10 @@ const [activeFilterTab,setActiveFilterTab]=useState({
     setFile={setFile}
     readFile={readFile}
     />
-    case "aipicker" : return <AIPicker />
+    case "aipicker" : return <AIPicker 
+    setPrompt= {setPrompt}
+    generateShirt ={generateShirt}
+    />
     default : return null
   }
  }

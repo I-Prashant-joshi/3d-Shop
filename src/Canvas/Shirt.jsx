@@ -35,7 +35,7 @@ function Shirt() {
         position={[0,0,0.1]}
         rotation={[0,0,0]}
         scale={0.8}
-        map={logoTexture}
+        map={fullTexture}
         />
       }
     </mesh>
