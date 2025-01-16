@@ -1,10 +1,11 @@
 import React from 'react'
 import CloseIcon from '@mui/icons-material/Close';
-
+import { useMediaQuery } from '@mui/material';
 function AIPicker({setPrompt,generateShirt,handletabclick}) {
+    const isMobile = useMediaQuery('(max-width:768px)');
   return (
     <>
-    <div style={{position:"absolute",left:80,bottom:340,height:"200px",width:"230px",backgroundColor:"#ece8e8"}}>
+    <div style={{position:"absolute",left:isMobile ? 50 :80,bottom:isMobile ?200 :340,height:isMobile ?"150px" :"200px",width:"230px",backgroundColor:"#ece8e8"}}>
     <div className='flex justify-end' onClick={()=>handletabclick("close")}><CloseIcon /></div>
     
       <div style={{display:"flex",flexDirection:"column"}}>
@@ -14,9 +15,7 @@ function AIPicker({setPrompt,generateShirt,handletabclick}) {
         <input type='text' placeholder='Please type here... ' onChange={(e)=>setPrompt(e.target.value)} />
       
       <div style={{width:"100%",display:"flex",justifyContent:"space-between",padding:"10px"}}>
-      {/* <button>
-          Full
-        </button> */}
+     
         <button style={{backgroundColor:"blue",color:"white"}} onClick={()=>generateShirt("logo")}>
          Generate
         </button>

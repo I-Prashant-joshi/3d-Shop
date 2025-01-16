@@ -5,6 +5,7 @@ import FilePicker from "../components/FilePicker";
 import AIPicker from "../components/AIPicker";
 import { reader } from "../config/helpers";
 import state from "../store";
+import { useMediaQuery } from '@mui/material';
 
 function Customize() {
 const [activeTab,setActiveTab]=useState("")
@@ -66,6 +67,8 @@ async function generateShirt (type){
     default : return null
   }
  }
+ let isMobile = useMediaQuery('(max-width:768px)');
+
   return (
    <div style={{
     display:"flex",
@@ -85,6 +88,7 @@ async function generateShirt (type){
         src={tab.icon}
         alt="icon"
         onClick={()=>handletabclick(tab.name)}
+        style={{height: isMobile ? "50px" : "100px",width:isMobile ? "50px" : "100px"}}
         />
       </div>          
         )
